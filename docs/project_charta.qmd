@@ -1,16 +1,44 @@
 # Project Charta
 ## Context and Scope
-Describe the context (domain/business area) and topic of the visualization project. Which topical aspects should be addressed? Which question(s) should the data visualization project answer? What are the expected benefits of the project? Where should the visualization product be published (e.g. website, app, intranet)?
+
+
+Unser Projekt gehört zum geowissenschaftlichen Bereich und beschäftigt sich mit Meteoritenfunden. Ziel ist es, die weltweit bekannten Meteoriten interaktiv darzustellen und umfassend zu analysieren. Dabei werden insbesondere die geografische Verteilung, zeitliche Trends, Masse und Klassifikation der Meteoriten betrachtet. Das Projekt soll unter anderem folgende Fragen beantworten: Wo auf der Erde werden Meteoriten am häufigsten gefunden? Gibt es zeitliche oder regionale Muster bei der Masse oder Klassifikation der Meteoriten? Darüber hinaus können auf Basis dieser Daten weitere analytische Fragestellungen entwickelt werden, die gegebenenfalls mit zusätzlichen Datensätzen untersucht werden können.
+
+Die Vorteile des Projekts liegen sowohl im wissenschaftlichen als auch im schulischen Bereich. Nutzer können die Daten interaktiv erkunden, Muster und Trends erkennen und Zusammenhänge anschaulich nachvollziehen. Das Visualisierungsprojekt ist besonders spannend für alle, die sich für Meteoriten interessieren. Man kann die Funde interaktiv entdecken, mehr über die geografische Verteilung, die Klassen und die Größen der Meteoriten erfahren und Zusammenhänge gut nachvollziehen. So wird das Ganze sowohl lehrreich als auch unterhaltsam, egal ob man einfach neugierig ist oder sich bereits tiefer für das Thema interessiert.
+
+Das Projekt wird mit einer Shiny App umgesetzt und als Webseite zugänglich gemacht, sodass Interessierte direkt im Browser auf das Dashboard zugreifen können.
+
 
 ## Project Objectives and Success Criteria
-Describe the objectives **from the client/stakeholder perspective**. For example: "Enable users to understand the distribution of sales across different regions". Try to be as specific as possible, but restrict to the concrete needs formulated by the client/stakeholders. For example: if a dashboard is needed explicitly, then state it here, otherwise leave the form of the visualization product open.
 
-Formulate success criteria (from the client/stakeholder perspective): qualitative objectives and, wherever possible, corresponding quantitative metrics with target values to be achieved within the project. These objectives should directly address the pains and gains identified in the user analysis.
+### Projekziele
+1. Die geografische Verteilung der Meteoritenfunde weltweit über Karten mit Latitude- und Longitude-Daten visualisieren können.  
+2. Zeitliche Trends analysieren können, um Muster bei Meteoritenfällen oder Mteoritenfunden über die Jahre zu erkennen.  
+3. Eigenschaften der Meteoriten wie Masse und Klassifikation einsehen und vergleichen können, beispielsweise zwischen Regionen oder Zeiträumen.  
+4. Interaktiv mit den Daten arbeiten können, z.B. über Filter nach Jahr, Masse, Typ oder Region, um eigene Explorationen durchzuführen.
 
-It is also helpful to specify what is explicitly excluded from the project objectives (out of scope).
+### Erfolgskriterien(qualitativ)
+1. Nutzende können die Verteilung und Trends der Meteoriten intuitiv erkunden, ohne vorherige Schulung.
+2. Regionale oder zeitliche Muster der Meteoritenfunde sind erkennbar.
+3. Das Dashboard unterstützt interaktive Filterfunktionen und bietet klare visuelle Hinweise (Farbe, Größe).
+4. Nutzerinnen und Nutzer können verschiedene Datenattribute (Masse, Klasse, Jahr) einfach vergleichen und analysieren.
+5. Die Visualisierungen sind verständlich und selbsterklärend, sodass die Interpretation der Daten leicht fällt.
+
+### Erfolgskriterien(qunatitativ) 
+Keine Vorhanden 
+
+### Out of scope
+1. Das Dashboard zeigt nur bestehende, historische Meteoritenfunde, eine Echtzeitintegration neuer Funde wird nicht umgesetzt.
+2. Es werden keine Vorhersagen erstellt, z. B. zur zukünftigen Fallstelle von Meteoriten oder zu Einschlagwahrscheinlichkeiten.
+
 
 ## Stakeholder Analysis
-List the people involved in and affected by the project. Describe their goals and relationships with each other. Visualisation in the form of a stakeholder map can provide a quick overview.
+Im Projekt Meteoriten Dashboard sind drei zentrale Gruppen beteiligt: Der Auftraggeber (Dozent) bewertet das Projekt und bietet fachliche Unterstützung. Das Projektteam (Studenten) entwickelt und setzt das Dashboard um. Die User nutzen das fertige Dashboard aktiv. So sorgt das Team für eine Umsetzung nach den Vorgaben des Auftraggebers, während die User das Ergebnis direkt verwenden.
+
+::: {.figure #fig:stakeholder}
+![Stakeholderanalyse](pics/Stakeholdeanalyse.png){#fig:stakeholderfig}
+Abbildung: Stakeholderanalyse
+:::
 
 ## User Analysis
 Analyse the target audience of the visualization product and create at least 2 personas with **relevant attributes** such as domain expertise, data literacy, technical environment (devices, screen sizes), frequency of use etc. Amend each persona with the dimensions of the customer profile side in the Value Proposition Canvas @Osterwalder2014:
@@ -21,8 +49,8 @@ Analyse the target audience of the visualization product and create at least 2 p
 
 
 ## Situation Assessment
-Describe the available resources (data, personnel, material, software/tools, infrastructure, etc.) and time as well as restrictions and constraints. Possible risks that may arise during the project are also identified.
-
+Für unsere Projektarbeit arbeiten wir mit einem Datensatz der NASA, der Daten von Meteoriteneinschlägen enthält. 
+Unser Team besteht aus drei Personen. Als Software setzen wir hauptsächlich Python mit allen relevanten Zusatzpaketen ein, bei Bedarf kann weitere Software genutzt werden. Das Projekt soll bis zum 1. Juni abgeschlossen werden, wobei der Arbeitsaufwand auf die Teammitglieder verteilt und durch regelmässige Treffen koordiniert wird. Mögliche Risiken umfassen technische Probleme, Verzögerungen bei der Datenaufbereitung oder eine ungleichmässige Arbeitsverteilung im Team, welche den Zeitplan beeinflussen könnten.
 
 ## Visualization Concept
 Translate the project objectives into a concrete visualization concept. This corresponds to the value map side of the Value Proposition Canvas [@Osterwalder2014] – describe how the proposed visualization product addresses the users' tasks, relieves their pains and creates gains. Address the following aspects:
