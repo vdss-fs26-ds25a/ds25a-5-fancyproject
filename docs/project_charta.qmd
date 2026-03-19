@@ -135,56 +135,82 @@ Describe the available resources (data, personnel, material, software/tools, inf
 
 
 ## Visualization Concept
-Translate the project objectives into a concrete visualization concept. This corresponds to the value map side of the Value Proposition Canvas [@Osterwalder2014] – describe how the proposed visualization product addresses the users' tasks, relieves their pains and creates gains. Address the following aspects:
+### Produktform
 
-* **Product form**: Composition of the visualization product – dashboard, data story, infographic, exploratory tool, etc.
-* **Visual encodings**: Types of charts and visualizations to be used – e.g. bar chart, line chart, scatter plot, map, etc.
-* **Interactivity**: Static vs. dynamic/interactive elements – filtering, drill-down, tooltips, linked views, etc.
-* **Narrative and annotation**: Text elements, storytelling structure, annotations and contextual information.
-* **Target medium and integration**: Embedding in the target environment – e.g. website, intranet, app, print, etc.
+Das Visualisierungsprodukt ist ein interaktives Dashboard, umgesetzt als Python-Shiny-Webanwendung. Ein einleitender Abschnitt führt die Nutzenden durch die wichtigsten Informationen im Datensatz. Anschliessend können sie die Daten selbst filtern und untersuchen. Das Dashboard richtet sich primär an die interessierte Öffentlichkeit, sekundär an wissenschaftlich interessierte Nutzende.
 
-For each design decision, articulate the intended value along three dimensions:
+Die webbasierte Bereitstellung erfordert keine Installation und ist über eine stabile URL für alle zugänglich.
 
-* **Cognitive and analytical value**: How does the design amplify the user's ability to detect patterns, identify outliers, understand distributions or discover relationships [@card1999; @vanwijk2005]?
-* **Communicative value**: How does the design support the communication of information to the target audience profile(s)? 
-* **Experiential and aesthetic value**: How do the visual and interactive qualities of the design foster engagement, trust and willingness to adopt the product in practice?
+### Visuelle Kodierungen
 
-Justify the concept by mapping it explicitly to the project objectives and the user needs identified in the user analysis.
+Den Kern des Dashboards bildet ein 3D-Globus mit Heatmap. Er zeigt, wo die 45'716 Meteoriten eingeschlagen sind. Die Fläche des Globus wird durch eine Farbskala von kalt nach warm kodiert je nach Einschalgsdichte. Ergänzt wird der Globus durch ein Liniendiagramm der Entdeckungen pro Jahrzehnt sowie ein gruppiertes Balkendiagramm, das beobachtete Einschläge und nachträgliche Funde vergleicht.
 
+Die drei Ansichten zeigen gemeinsam räumliche, zeitliche und kategorische Muster. Der Globus ist ohne Vorkenntnisse lesbar. Balkendiagramm und Liniendiagramm sind bekannte Charttypen, die öffentlichkeit versteht diese sehr gut. Die 3D-Darstellung erzeugt einen visuellen Anreiz und lädt zum Erkunden ein.
+
+### Interaktivität
+
+Das Dashboard bietet 3 interaktive Elemente. Eine Filterleiste erlaubt die Auswahl nach Meteoritenklasse und Fall-/Fund-Status. Tooltips zeigen beim Hovern Name, Jahr, Masse und Klasse eines Meteoriten. Eine Auswahl auf der Karte aktualisiert automatisch die Diagramme.
+
+Tooltips liefern wichtige Details, ohne die Hauptansicht zu überladen. Nutzende können gezielt filtern, ohne Daten selbst auswerten zu müssen.
+
+### Narrative und Annotation
+
+Ein kurzer Einleitungstitel gibt den thematischen Rahmen vor. Das Zeitdiagramm enthält eine Annotation, die einen markanten Anstieg der Fundzahlen erklärt und einordnet. Tooltips erklären Meteoritenklassen in einfacher Sprache. Die Struktur folgt einer Martini-Glass-Logik, mit einer geführten Erklärung zu Beginn und freier Exploration im Anschluss.
+
+Gezielte Annotationen lenken den Blick auf die wichtigsten Muster und verhindern, dass zentrale Erkenntnisse übersehen werden. Nutzende ohne Vorkenntnisse verstehen die Zusammenhänge durch die eingebetteten Erklärungen.
+
+### Zielmedium und Integration
+
+Das Dashboard wird als öffentliche Webanwendung bereitgestellt. Es ist primär für Desktop-Browser ausgelegt. Der gesamte Code und die Datenpipeline sind in einem Quarto-Projekt auf GitHub dokumentiert und reproduzierbar.
+
+Der Server verarbeitet alle 45'716 Datensätze serverseitig. Nutzende müssen nichts installieren. Die Online-Bereitstellung macht das Produkt für Öffentlichkeit zugänglich.
+
+### Bezug zu Projektzielen und Nutzerbedürfnissen
+
+Das Konzept analysiert die geografische und zeitliche Verteilung von Meteoriteneinschlägen und macht diese für die öffentlichkeit zugänglich. Die interessierte Öffentlichkeit profitiert durch die 3D Graphik, den Annotationen und der einfachen Webbereitstellung. Wissenschaftlich interessierte Nutzende können über Filter und verknüpfte Ansichten eigene Fragen untersuchen.
 
 ## Project Plan
-Divide the project into individual phases, describe them briefly and draw up a preliminary timetable, e.g. as a Gantt chart:
+
+Das Projekt gliedert sich in vier Phasen: Projektinitiierung, Datenanalyse, Design und Entwicklung sowie Evaluation und Präsentation.
+
+**Projektinitiierung** umfasst die Erstellung und Einreichung der Projektcharta. Die Phase beginnt Anfang März und endet mit der Abgabe des Charta-Entwurfs am 20. März.
+
+**Datenanalyse** umfasst die explorative Analyse des NASA-Meteoriten-Datensatzes sowie die Erstellung des Data Reports. Die Phase läuft von März bis April.
+
+**Design und Entwicklung** umfasst das Visualisierungsdesign sowie die Implementierung der Shiny-Website. Die Phase läuft von April bis Mai.
+
+**Evaluation und Präsentation** umfasst die Evaluation der Ergebnisse sowie die Vorbereitung und Einreichung der Präsentation. Der Entwurf der Präsentation wird am 18. Mai eingereicht. Die finale Abgabe erfolgt am 1. Juni.
 
 ```{mermaid}
-%%| label: fig-project-plan
-%%| fig-cap: Preliminary project plan in the form of a Gantt chart.
 gantt
-    title Project Plan
+    title Projektplan
     dateFormat YYYY-MM-DD
-    tickInterval 5day
-    section Project Understanding
-        Initiation workshop and context analysis     :a1, 2024-07-01, 1d
-        Stakeholder and user analysis     :a3, 2024-07-02, 5d
-        Situation assessment    :a4, 2024-07-06, 1d
-        Project objectives and visualization concept    :a5, 2024-07-07, 1d
-        Sign project charta: milestone, m1, 2024-07-08, 1d
-    
-    section Data Acquisition and Exploration
-        Acquire data :a6, 2024-07-08, 3d
-        Exploratory data analysis   :a7, 2024-07-09, 2d
-        Discuss data report: milestone, m2, 2024-07-11, 1d
-        
-    section Visual Encoding and Design
-        Overview charts   :a8, 2024-07-11, 3d
-        Maps :a9, 2024-07-11, 5d
-        Implement Dashboard prototype :a10, 2024-07-16, 5d
-        Complete visualization report :a10, 2024-07-21, 1d
-    section Evaluation
-        Prepare presentation :a10, 2024-07-22, 2d
-        Project presentation : milestone, m2, 2024-07-24, 4m
+    axisFormat %d.%m
+
+    section Projektinitiierung
+    Projektcharta erstellen         :active, 2026-03-01, 2026-03-20
+    Abgabe Entwurf Projektcharta    :milestone, 2026-03-20, 0d
+
+    section Datenanalyse
+    Datensatz erkunden              :2026-03-20, 2026-04-10
+    Data Report erstellen           :2026-04-01, 2026-04-20
+
+    section Design und Entwicklung
+    Visualisierungsdesign           :2026-04-10, 2026-04-30
+    Website erstellen               :2026-04-20, 2026-05-18
+
+    section Evaluation und Präsentation
+    Evaluation                      :2026-05-01, 2026-05-18
+    Abgabe Entwurf Präsentation     :milestone, 2026-05-18, 0d
+    Präsentation vorbereiten        :2026-05-18, 2026-06-01
+    Finale Abgabe                   :milestone, 2026-06-01, 0d
 ```
 
-See [Mermaid syntax for Gantt charts](https://mermaid.js.org/syntax/gantt.html). It might not be displayed correctly in Safari &#8594; use Chrome. [Live editor with export functionality](https://mermaid.live/)
 
 ## Roles and Contact Details
-List the people involved in the development work here with their role titles, tasks and contact details.
+
+| Name | Role | Tasks |
+|---|---|---|
+| Andreas Minder | Visualization Lead | Visualisierungsdesign, Implementierung der Shiny-Website |
+| Silvan Dubach | Project Lead | Projektkoordination, Projektcharta, Qualitätssicherung |
+| Nico Varano | Data Analysis Lead | Datenanalyse, Data Report, Datenpipeline |
