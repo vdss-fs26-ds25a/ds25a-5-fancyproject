@@ -13,7 +13,7 @@ Das Projekt wird mit einer Shiny App umgesetzt und als Webseite zugänglich gema
 
 ### Projekziele
 1. Die geografische Verteilung der Meteoritenfunde weltweit über Karten mit Latitude- und Longitude-Daten visualisieren können.  
-2. Zeitliche Trends analysieren können, um Muster bei Meteoritenfällen oder Mteoritenfunden über die Jahre zu erkennen.  
+2. Zeitliche Trends analysieren können, um Muster bei Meteoritenfällen oder Meteoritenfunden über die Jahre zu erkennen.  
 3. Eigenschaften der Meteoriten wie Masse und Klassifikation einsehen und vergleichen können, beispielsweise zwischen Regionen oder Zeiträumen.  
 4. Interaktiv mit den Daten arbeiten können, z.B. über Filter nach Jahr, Masse, Typ oder Region, um eigene Explorationen durchzuführen.
 
@@ -23,9 +23,6 @@ Das Projekt wird mit einer Shiny App umgesetzt und als Webseite zugänglich gema
 3. Das Dashboard unterstützt interaktive Filterfunktionen und bietet klare visuelle Hinweise (Farbe, Größe).
 4. Nutzerinnen und Nutzer können verschiedene Datenattribute (Masse, Klasse, Jahr) einfach vergleichen und analysieren.
 5. Die Visualisierungen sind verständlich und selbsterklärend, sodass die Interpretation der Daten leicht fällt.
-
-### Erfolgskriterien(qunatitativ) 
-Keine Vorhanden 
 
 ### Out of scope
 1. Das Dashboard zeigt nur bestehende, historische Meteoritenfunde, eine Echtzeitintegration neuer Funde wird nicht umgesetzt.
@@ -100,11 +97,11 @@ Es wurden zwei Zielgruppen-Personas definiert:
 
 ---
 
-### **Persona 2: Bildungsinteressierter Nutzer / Student**
+### **Persona 2: Bildungsinteressierter Nutzer**
 
 **Name:** Max Schneider  
 **Alter:** 22  
-**Beruf:** Geowissenschafts-Student  
+**Beruf:** Student  
 
 **Domain Expertise:**  
 - Grundwissen über Meteoriten und Astronomie  
@@ -183,7 +180,7 @@ Tooltips liefern wichtige Details, ohne die Hauptansicht zu überladen. Nutzende
 
 ### Narrative und Annotation
 
-Ein kurzer Einleitungstitel gibt den thematischen Rahmen vor. Das Zeitdiagramm enthält eine Annotation, die einen markanten Anstieg der Fundzahlen erklärt und einordnet. Tooltips erklären Meteoritenklassen in einfacher Sprache. Die Struktur folgt einer Martini-Glass-Logik, mit einer geführten Erklärung zu Beginn und freier Exploration im Anschluss.
+Ein kurzer Einleitungstitel gibt den thematischen Rahmen vor. Das Zeitdiagramm enthält eine Annotation, die einen markanten Anstieg der Fundzahlen erklärt und einordnet. Tooltips erklären Meteoritenklassen in einfacher Sprache. 
 
 Gezielte Annotationen lenken den Blick auf die wichtigsten Muster und verhindern, dass zentrale Erkenntnisse übersehen werden. Nutzende ohne Vorkenntnisse verstehen die Zusammenhänge durch die eingebetteten Erklärungen.
 
@@ -237,8 +234,9 @@ gantt
 
 ## Roles and Contact Details
 
-| Name | Role | Tasks |
+| Name | Role | Mail |
 |---|---|---|
-| Andreas Minder | Visualization Lead | Visualisierungsdesign, Implementierung der Shiny-Website |
-| Silvan Dubach | Project Lead | Projektkoordination, Projektcharta, Qualitätssicherung |
-| Nico Varano | Data Analysis Lead | Datenanalyse, Data Report, Datenpipeline |
+| Andreas Minder | Developer |mindeand@students.zhaw.ch|
+| Nico Varano | Developer | varannic.studnets.zhaw.ch |
+| Silvan Dubach | Developer | dubacsil@students.zhaw.ch |
+
